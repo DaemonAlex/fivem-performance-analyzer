@@ -17,6 +17,11 @@ local function logToFile(message)
     end
 end
 
+-- Function to get resource state
+local function getResourceState(resource)
+    return GetResourceState(resource)
+end
+
 CreateThread(function()
     while true do
         local resourceList = GetNumResources()
@@ -24,17 +29,17 @@ CreateThread(function()
 
         for i = 0, resourceList - 1 do
             local resource = GetResourceByFindIndex(i)
-            local time = GetResourcePerfTime(resource)
-            performanceData[#performanceData + 1] = { name = resource, time = time }
+            local state = getResourceState(resource)
+            performanceData[#performanceData + 1] = { name = resource, state = state }
         end
 
-        -- Sort the data by time in descending order
-        table.sort(performanceData, function(a, b) return a.time > b.time end)
+        -- Sort the data by state (up/down)
+        table.sort(performanceData, function(a, b) return a.state < b.state end)
 
         -- Prepare message
-        local message = 'Top 10 Poorest Performing Scripts:\n'
+        local message = 'Resource States:\n'
         for i = 1, math.min(10, #performanceData) do
-            message = message .. string.format('%d. %s - %dms\n', i, performanceData[i].name, performanceData[i].time)
+            message = message .. string.format('%d. %s - %s\n', i, performanceData[i].name, performanceData[i].state)
         end
 
         -- Output to console
