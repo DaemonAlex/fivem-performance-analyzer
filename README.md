@@ -11,6 +11,9 @@ This resource helps you monitor the performance of your FiveM/QBCore server by l
 - Runs every 10 minutes by default.
 - Logs results to a file and sends notifications to a Discord channel.
 
+## Future Features
+- Ability to use 3rd party APis to gather tick and other performance info 
+
 ## Installation
 
 1. **Download or Clone the Repository**:
