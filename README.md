@@ -1,4 +1,4 @@
-# FiveM Performance Analyzer
+# FiveM Performance Analyzer  -  THIS IS STILL UNDER DEVELOPMENT 
 
 ## Overview
 
@@ -12,7 +12,8 @@ This resource helps you monitor the performance of your FiveM/QBCore server by l
 - Logs results to a file and sends notifications to a Discord channel.
 
 ## Future Features
-- Ability to use 3rd party APis to gather tick and other performance info 
+- Ability to use 3rd party APis to gather tick and other performance info
+- Additional performance evaluation logic 
 
 ## Installation
 
