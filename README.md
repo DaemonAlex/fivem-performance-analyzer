@@ -13,7 +13,7 @@ This resource helps you monitor the performance of your FiveM/QBCore server by l
 
 ## Future Features
 - Ability to use 3rd party APis to gather tick and other performance info
-- Additional performance evaluation logic 
+- Additional performance logic 
 
 ## Installation
 
